@@ -1,0 +1,8 @@
+.idea/
+
+.terraform/
+*.tfstate*
+*.tfplan
+
+node_modules
+coverage
