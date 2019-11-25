@@ -1,8 +1,10 @@
 # load nginx image
-FROM nginx:1.17.4
+FROM nginx:1.17.6-alpine
 
 # update and install openssl
-RUN apt-get update -y && apt-get upgrade -y && apt-get install -y openssl
+RUN apk update && \
+    apk upgrade && \
+    apk add openssl
 
 # change ownership to user nginx, copy files and create directories
 RUN mkdir /tmp/nginx
