@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -e
 
-echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
+docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASSWORD"
 docker push hlag/https-proxy:latest
