@@ -1,5 +1,5 @@
 os: linux
-language: minimal
+language: shell
 notifications:
   email:
     on_success: never
