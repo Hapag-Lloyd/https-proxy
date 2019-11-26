@@ -4,7 +4,7 @@ FROM nginx:1.17.6-alpine
 # update and install openssl
 RUN apk update && \
     apk upgrade && \
-    apk add openssl
+    apk add openssl bash
 
 # change ownership to user nginx, copy files and create directories
 RUN mkdir /tmp/nginx
