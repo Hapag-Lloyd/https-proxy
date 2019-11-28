@@ -1,4 +1,7 @@
+[![GitHub contributors](https://img.shields.io/github/contributors/Hapag-Lloyd/https-proxy.svg)](https://GitHub.com/Hapag-Lloyd/https-proxy/graphs/contributors/)
 [![Build Status](https://travis-ci.org/Hapag-Lloyd/https-proxy.svg?branch=master)](https://travis-ci.org/Hapag-Lloyd/https-proxy)
+![GitHub last commit](https://img.shields.io/github/last-commit/hapag-lloyd/https-proxy)
+[![GitHub last commit](https://img.shields.io/badge/dockerhub-https--proxy-informational)](https://hub.docker.com/r/hlag/https-proxy)
 
 # https-proxy
 ##### to secure application traffic behind the ssl terminating loadbalancer 
