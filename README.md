@@ -14,7 +14,7 @@
 
 The goal of the https-proxy is to secure the application traffic
 inside of the virtual network.<br>
-The image was tested on a aws fargate cluster. The clusters LB
+The image was tested on an aws fargate cluster. The clusters LB
 accepts self-signed certificates. This way the https-proxy can accept
 encrypted traffic from the LB which already terminated the public
 traffic encryption and re-encrypt it to be forwarded to your application.
@@ -45,8 +45,8 @@ applications port.<br>
 
 #### Configuring the environment variable
 To set your internal application port on the proxy container you have
-to pass on the value as environment variable `INPORT` e.g. `INPORT=5000`.
-The https-proxy's entrypoint.sh script uses this variable to sed the
+to pass on the value as an environment variable `INPORT` e.g. `INPORT=5000`.
+The https-proxy's entrypoint.sh script uses this variable to set the
 required parameters in `default.conf`.
 
 
