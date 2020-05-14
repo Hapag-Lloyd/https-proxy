@@ -45,7 +45,7 @@ applications port.<br>
 
 #### Configuring the environment variable
 To set your internal application port on the proxy container you have
-to pass on the value as an environment variable `INPORT` e.g. `INPORT=5000`.
+to pass on the value as an environment variable `TARGET_HOST_PORT` e.g. `TARGET_HOST_PORT=127.0.0.1:5000`.
 The https-proxy's entrypoint.sh script uses this variable to set the
 required parameters in `default.conf`.
 
@@ -98,8 +98,8 @@ resource "aws_ecs_service" "aws_ecs_service" {
     ],
     "environment": [
       {
-        "name": "INPORT",
-        "value": "${CONTAINER_PORT}"
+        "name": "TARGET_HOST_PORT",
+        "value": "127.0.0.1:${CONTAINER_PORT}"
       }
     ],
     ...
