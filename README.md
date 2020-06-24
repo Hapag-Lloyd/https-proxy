@@ -23,19 +23,22 @@ traffic encryption and re-encrypt it to be forwarded to your application.
 ## Usage
 
 ##### Important:
-This setup only works on services like aws fargate where all containers
+~~This setup only works on services like aws fargate where all containers
 of a service are using the same shared network interface. This way
 the incoming traffic can be forwarded by the proxy to
 `localhost:PORT`. If you are using a service where every container
 has it's own interface feel free to fork the source code and implement
 your own solution. This should be done in `default.conf` and perhaps
-in `Dockerfile` and / or `entrypoint.sh`.
+in `Dockerfile` and / or `entrypoint.sh`.~~
+
+The PORT variable was changed to `TARGET_HOST_PORT` which consists of the IP
+(or hostname) and the port, separated by a colon (e.g. 127.0.0.1:5000). 
 
 #### Configuring the LB
-Configure your loadbalancer to forward all traffic to your application
+Configure your load balancer to forward all traffic to your application
 on port 8443. This is necessary since only high-ports can be used
 inside a fargate service.<br>
-Make sure that your ACLs and security groups do also match the new
+Make sure your ACLs and security groups do also match the new
 set port.
 
 #### Configuring your service
@@ -46,9 +49,8 @@ applications port.<br>
 #### Configuring the environment variable
 To set your internal application port on the proxy container you have
 to pass on the value as an environment variable `TARGET_HOST_PORT` e.g. `TARGET_HOST_PORT=127.0.0.1:5000`.
-The https-proxy's entrypoint.sh script uses this variable to set the
+The https-proxy's `entrypoint.sh` script uses this variable to set the
 required parameters in `default.conf`.
-
 
 ## Example
 
